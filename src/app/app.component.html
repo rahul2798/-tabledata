@@ -1,32 +1,43 @@
-<div>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="height: 100vh;">
+<div style="margin: 15px;">
+  <mat-form-field style="margin-top: 30px;">
 
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef style=" width: 10%; "> Id </th>
-      <td mat-cell *matCellDef="let element" style=" width: 10%; "> {{element.id}} </td>
-    </ng-container>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filter Tag" #input>
+  </mat-form-field>
+  <div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="height: 100vh;">
 
-
-
-    <ng-container matColumnDef="reactions">
-      <th mat-header-cell *matHeaderCellDef class="cuatsTable" style=" width: 20%; ">Reactions</th>
-      <td mat-cell *matCellDef="let element" style=" width: 20%; "> {{element.reactions}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="title">
-      <th mat-header-cell *matHeaderCellDef style=" width: 50%; "> Title </th>
-      <td mat-cell *matCellDef="let element" style=" width: 50%; "> {{element.title}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="userId">
-      <th mat-header-cell *matHeaderCellDef style=" width: 20%; "> UserId </th>
-      <td mat-cell *matCellDef="let element" style=" width: 20%; "> {{element.userId}} </td>
-    </ng-container>
-
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef style=" width: 10%; "> Id </th>
+        <td mat-cell *matCellDef="let element" style=" width: 10%; "> {{element.id}} </td>
+      </ng-container>
 
 
-  </table>
-  <mat-paginator [pageSize]="pageSize" (page)="onPageChange($event)"></mat-paginator>
+
+      <ng-container matColumnDef="reactions">
+        <th mat-header-cell *matHeaderCellDef class="cuatsTable" style=" width: 10%; ">Reactions</th>
+        <td mat-cell *matCellDef="let element" style=" width: 10%; "> {{element.reactions}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef style=" width: 45%; "> Title </th>
+        <td mat-cell *matCellDef="let element" style=" width: 45%; "> {{element.title}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="userId">
+        <th mat-header-cell *matHeaderCellDef style=" width: 10%; "> UserId </th>
+        <td mat-cell *matCellDef="let element" style=" width: 10%; "> {{element.userId}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="tags">
+        <th mat-header-cell *matHeaderCellDef style=" width: 25%; "> Tags </th>
+        <td mat-cell *matCellDef="let element" style=" width: 25%; "> {{element.tags}} </td>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+
+    </table>
+    <mat-paginator [pageSize]="pageSize" (page)="onPageChange($event)"></mat-paginator>
+  </div>
 </div>

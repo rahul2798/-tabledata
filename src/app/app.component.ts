@@ -23,7 +23,7 @@ export class AppComponent {
   dataSource: any;
   mydata: any;
   constructor(private apiService: ApiService) {}
-  displayedColumns: string[] = ['id', 'reactions', 'title', 'userId'];
+  displayedColumns: string[] = ['id', 'reactions', 'title', 'userId', 'tags'];
   pageSize = 10;
   totalItems: any;
   currentPage = 0;
@@ -49,5 +49,10 @@ export class AppComponent {
       startIndex,
       startIndex + this.pageSize
     );
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }
