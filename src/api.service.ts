@@ -10,13 +10,6 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  // getData(page: number, pageSize: number) {
-  //   // Make an HTTP GET request to your API with pagination parameters
-  //   return this.http.get<any>(
-  //     `https://mocki.io/v1/072f4309-6b86-4ecc-b055-e16192d9f76a?page=${page}&pageSize=${pageSize}`
-  //   );
-  // }
-
   getData(): Observable<Response> {
     return this.http.get<Response>(this.url);
   }
