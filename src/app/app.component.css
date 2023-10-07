@@ -1,0 +1,22 @@
+/* table {
+    width: 100%;
+  } */
+
+ /* Add this CSS to your component's stylesheet or a global stylesheet */
+
+/* Make the table responsive */
+.mat-elevation-z8 {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  /* Adjust the font size or other styles for smaller screens */
+  @media (max-width: 600px) {
+    /* For screens with a maximum width of 600px */
+    .mat-table {
+      font-size: 14px; /* Adjust the font size as needed */
+    }
+  
+    /* You can add more styles for smaller screens here */
+  }
+  
